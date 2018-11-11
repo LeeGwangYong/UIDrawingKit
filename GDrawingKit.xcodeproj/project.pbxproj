@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC16A95321907C510039CCB3 /* UIDrawingKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIDrawingKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC16A95321907C510039CCB3 /* GDrawingKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDrawingKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC16A95621907C510039CCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC16A95821907C510039CCB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC16A95B21907C510039CCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		FC16A94A21907C510039CCB3 = {
 			isa = PBXGroup;
 			children = (
-				FC16A95521907C510039CCB3 /* UIDrawingKit */,
+				FC16A95521907C510039CCB3 /* GDrwaingKit */,
 				FC16A95421907C510039CCB3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,12 +64,12 @@
 		FC16A95421907C510039CCB3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC16A95321907C510039CCB3 /* UIDrawingKit.app */,
+				FC16A95321907C510039CCB3 /* GDrawingKit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC16A95521907C510039CCB3 /* UIDrawingKit */ = {
+		FC16A95521907C510039CCB3 /* GDrwaingKit */ = {
 			isa = PBXGroup;
 			children = (
 				FC16A95621907C510039CCB3 /* AppDelegate.swift */,
@@ -80,7 +80,7 @@
 				FC16A96221907C530039CCB3 /* Info.plist */,
 				FC16A96A21907D660039CCB3 /* Sources */,
 			);
-			path = UIDrawingKit;
+			path = GDrwaingKit;
 			sourceTree = "<group>";
 		};
 		FC16A96A21907D660039CCB3 /* Sources */ = {
@@ -126,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC16A95221907C510039CCB3 /* UIDrawingKit */ = {
+		FC16A95221907C510039CCB3 /* GDrawingKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC16A96521907C530039CCB3 /* Build configuration list for PBXNativeTarget "UIDrawingKit" */;
+			buildConfigurationList = FC16A96521907C530039CCB3 /* Build configuration list for PBXNativeTarget "GDrawingKit" */;
 			buildPhases = (
 				FC16A94F21907C510039CCB3 /* Sources */,
 				FC16A95021907C510039CCB3 /* Frameworks */,
@@ -138,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = UIDrawingKit;
+			name = GDrawingKit;
 			productName = UIDrawingKit;
-			productReference = FC16A95321907C510039CCB3 /* UIDrawingKit.app */;
+			productReference = FC16A95321907C510039CCB3 /* GDrawingKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -158,7 +158,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FC16A94E21907C510039CCB3 /* Build configuration list for PBXProject "UIDrawingKit" */;
+			buildConfigurationList = FC16A94E21907C510039CCB3 /* Build configuration list for PBXProject "GDrawingKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -171,7 +171,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC16A95221907C510039CCB3 /* UIDrawingKit */,
+				FC16A95221907C510039CCB3 /* GDrawingKit */,
 			);
 		};
 /* End PBXProject section */
@@ -352,13 +352,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EPWV8KDDJE;
-				INFOPLIST_FILE = UIDrawingKit/Info.plist;
+				INFOPLIST_FILE = GDrwaingKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GwangYongLee.UIDrawingKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GwangYongLee.GDrwaingKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -371,13 +371,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EPWV8KDDJE;
-				INFOPLIST_FILE = UIDrawingKit/Info.plist;
+				INFOPLIST_FILE = GDrwaingKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GwangYongLee.UIDrawingKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GwangYongLee.GDrwaingKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,7 +387,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC16A94E21907C510039CCB3 /* Build configuration list for PBXProject "UIDrawingKit" */ = {
+		FC16A94E21907C510039CCB3 /* Build configuration list for PBXProject "GDrawingKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC16A96321907C530039CCB3 /* Debug */,
@@ -396,7 +396,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC16A96521907C530039CCB3 /* Build configuration list for PBXNativeTarget "UIDrawingKit" */ = {
+		FC16A96521907C530039CCB3 /* Build configuration list for PBXNativeTarget "GDrawingKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC16A96621907C530039CCB3 /* Debug */,

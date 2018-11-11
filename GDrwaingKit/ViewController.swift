@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canvasView.delegate = self
+        self.canvasView.showsVerticalScrollIndicator = false
+        self.canvasView.showsHorizontalScrollIndicator = false
     }
 }
 
