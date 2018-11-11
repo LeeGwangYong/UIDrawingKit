@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaperView" customModule="UIDrawingKit" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImageView" destination="MKw-Q8-Umz" id="A8p-AO-hgO"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Cp9-lz-zTr"/>
+                <outlet property="mainImageView" destination="bqJ-Tr-4Ws" id="REU-m3-WbV"/>
+                <outlet property="tempImageView" destination="HRB-vW-LHa" id="ibc-hn-1wS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKw-Q8-Umz">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bqJ-Tr-4Ws">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HRB-vW-LHa">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HRB-vW-LHa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8jm-nb-azH"/>
+                <constraint firstItem="MKw-Q8-Umz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="BjV-Ev-ZWp"/>
+                <constraint firstItem="bqJ-Tr-4Ws" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="CJg-BZ-oZt"/>
+                <constraint firstAttribute="bottom" secondItem="HRB-vW-LHa" secondAttribute="bottom" id="J6h-zc-teA"/>
+                <constraint firstAttribute="trailing" secondItem="HRB-vW-LHa" secondAttribute="trailing" id="QG7-hT-xtl"/>
+                <constraint firstItem="bqJ-Tr-4Ws" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="a2P-CI-YQr"/>
+                <constraint firstAttribute="bottom" secondItem="bqJ-Tr-4Ws" secondAttribute="bottom" id="bDR-GP-Lo5"/>
+                <constraint firstItem="HRB-vW-LHa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cB6-M3-qFD"/>
+                <constraint firstAttribute="trailing" secondItem="MKw-Q8-Umz" secondAttribute="trailing" id="eEH-lN-Edp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MKw-Q8-Umz" secondAttribute="bottom" id="gxE-xN-uXl"/>
+                <constraint firstAttribute="trailing" secondItem="bqJ-Tr-4Ws" secondAttribute="trailing" id="jvJ-yA-8TZ"/>
+                <constraint firstItem="MKw-Q8-Umz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uMR-h5-5ti"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="96.799999999999997" y="24.287856071964018"/>
+        </view>
+    </objects>
+</document>
