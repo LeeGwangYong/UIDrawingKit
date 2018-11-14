@@ -9,15 +9,29 @@
 import Foundation
 import UIKit
 
-class Brush: NSObject {
-    var width: CGFloat = 5.0
-    var alpha: CGFloat = 1.0
-    var color: UIColor = .black {
-        didSet {
-            if color.isEqual(UIColor.clear) {
-                self.blendMode = .clear
+class Brush {
+    enum BrushType {
+        case ink, eraser
+        
+        var blendMode: CGBlendMode {
+            switch self {
+            case .ink:
+                return .normal
+            case .eraser:
+                return .clear
             }
         }
     }
-    var blendMode: CGBlendMode = .normal
+    
+    var width: CGFloat = 5.0
+    var alpha: CGFloat = 1.0
+    var color: UIColor = .black
+    let type: BrushType
+    
+    init(type: BrushType) {
+        self.type = type
+        if self.type == .eraser {
+            self.color = .clear
+        }
+    }
 }

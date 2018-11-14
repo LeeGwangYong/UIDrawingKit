@@ -16,8 +16,8 @@ class PaperView: UIView {
     
     var curvePoints: [CGPoint] = [.zero]
     let bezielPath: UIBezierPath = UIBezierPath()
-    var brush = Brush()
-    var drawingContext = DrawingContext()
+    var brush: Brush?
+    var drawingContext: DrawingContext?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,10 +37,14 @@ class PaperView: UIView {
         self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.backgroundImageView.backgroundColor = .white
+        
+        self.bezielPath.lineCapStyle = .round
+        self.bezielPath.lineJoinStyle = .round
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
+        
         let currentPoint = touch.location(in: self)
         self.bezielPath.removeAllPoints()
         self.bezielPath.move(to: currentPoint)
@@ -65,12 +69,24 @@ class PaperView: UIView {
     }
     
     private func drawPath() {
+        guard let brush = self.brush else {fatalError("There is no brush")}
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
-        self.bezielPath.lineWidth = self.brush.width / UIScreen.main.scale
-        self.brush.color.setStroke()
-        self.bezielPath.stroke(with: self.brush.blendMode, alpha: self.brush.alpha)
         
-        self.tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        self.bezielPath.lineWidth = brush.width / UIScreen.main.scale
+        brush.color.setStroke()
+        
+        var imageView: UIImageView
+        switch brush.type {
+        case .eraser:
+            self.mainImageView.image?.draw(in: self.bounds)
+            imageView = self.mainImageView
+        default:
+            imageView = self.tempImageView
+        }
+        
+        self.bezielPath.stroke(with: brush.type.blendMode, alpha: brush.alpha)
+        
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
     

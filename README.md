@@ -10,10 +10,10 @@
   - [x] Get Scale
   - [ ] Smooth Drawing
   - [ ] 'pt' to 'px'
-- [ ] Brush
-  - [ ] Color
-  - [ ] Erase
-  - [ ] Alpha
+- [x] Brush
+  - [x] Color
+  - [x] Erase
+  - [x] Alpha
 - [ ] Undo / Redo
   - [ ] undoManager
   - [ ] snapshot

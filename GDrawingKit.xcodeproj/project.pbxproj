@@ -21,6 +21,9 @@
 		FC992B69219787FF00DB8272 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC992B68219787FF00DB8272 /* CanvasView.swift */; };
 		FC992B6B2197886E00DB8272 /* UIScrollView + Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC992B6A2197886E00DB8272 /* UIScrollView + Custom.swift */; };
 		FC992B732197A84700DB8272 /* CanvasViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC992B722197A84700DB8272 /* CanvasViewDelegateProxy.swift */; };
+		FC992B75219878B000DB8272 /* DrawingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC992B74219878B000DB8272 /* DrawingConfiguration.swift */; };
+		FC992B78219A859100DB8272 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC992B76219A859100DB8272 /* ColorCollectionViewCell.swift */; };
+		FC992B79219A859100DB8272 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC992B77219A859100DB8272 /* ColorCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		FC992B68219787FF00DB8272 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		FC992B6A2197886E00DB8272 /* UIScrollView + Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView + Custom.swift"; sourceTree = "<group>"; };
 		FC992B722197A84700DB8272 /* CanvasViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewDelegateProxy.swift; sourceTree = "<group>"; };
+		FC992B74219878B000DB8272 /* DrawingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingConfiguration.swift; sourceTree = "<group>"; };
+		FC992B76219A859100DB8272 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		FC992B77219A859100DB8272 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 				FC16A95621907C510039CCB3 /* AppDelegate.swift */,
 				FC16A95821907C510039CCB3 /* ViewController.swift */,
 				FC16A95A21907C510039CCB3 /* Main.storyboard */,
+				FC992B76219A859100DB8272 /* ColorCollectionViewCell.swift */,
+				FC992B77219A859100DB8272 /* ColorCollectionViewCell.xib */,
 				FC16A95D21907C530039CCB3 /* Assets.xcassets */,
 				FC16A95F21907C530039CCB3 /* LaunchScreen.storyboard */,
 				FC16A96221907C530039CCB3 /* Info.plist */,
@@ -91,6 +99,7 @@
 				FC16A97621928DA60039CCB3 /* PaperView */,
 				FC16A96D219142DB0039CCB3 /* Brush.swift */,
 				FC16A96F219148A80039CCB3 /* DrawingContext.swift */,
+				FC992B74219878B000DB8272 /* DrawingConfiguration.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -183,6 +192,7 @@
 			files = (
 				FC16A96121907C530039CCB3 /* LaunchScreen.storyboard in Resources */,
 				FC16A97921928EC70039CCB3 /* PaperView.xib in Resources */,
+				FC992B79219A859100DB8272 /* ColorCollectionViewCell.xib in Resources */,
 				FC16A95E21907C530039CCB3 /* Assets.xcassets in Resources */,
 				FC16A95C21907C510039CCB3 /* Main.storyboard in Resources */,
 			);
@@ -201,10 +211,12 @@
 				FC992B69219787FF00DB8272 /* CanvasView.swift in Sources */,
 				FC16A96E219142DB0039CCB3 /* Brush.swift in Sources */,
 				FC992B6B2197886E00DB8272 /* UIScrollView + Custom.swift in Sources */,
+				FC992B78219A859100DB8272 /* ColorCollectionViewCell.swift in Sources */,
 				FC16A970219148A80039CCB3 /* DrawingContext.swift in Sources */,
 				FC16A96921907D610039CCB3 /* PaperView.swift in Sources */,
 				FC16A96C21913EBB0039CCB3 /* UIImage + Convert.swift in Sources */,
 				FC16A97B219290130039CCB3 /* NSObject+ReuseIdentifier.swift in Sources */,
+				FC992B75219878B000DB8272 /* DrawingConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

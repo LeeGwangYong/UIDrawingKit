@@ -16,6 +16,37 @@ class CanvasView: UIScrollView {
     private let paperView: PaperView = PaperView(frame: CGRect(x: 0, y: 0, width: 1080, height: 720))
     private var delegateProxy = CanvasViewDelegateProxy()
     
+    var brushColor: UIColor {
+        get {
+            return self.paperView.brush?.color ?? .clear
+        }
+        set {
+            self.paperView.brush?.color = newValue
+        }
+    }
+    
+    var brushWidth: CGFloat {
+        get {
+            return self.paperView.brush?.width ?? 0.0
+        }
+        set {
+            self.paperView.brush?.width = newValue
+        }
+    }
+    
+    var brushAlpha: CGFloat {
+        get {
+            return self.paperView.brush?.alpha ?? 0.0
+        }
+        set {
+            self.paperView.brush?.alpha = newValue
+        }
+    }
+    
+    var currentBrush: Brush? {
+        return self.paperView.brush
+    }
+    
     override var delegate: UIScrollViewDelegate? {
         get {
             return self.delegateProxy._userDelegate
@@ -67,5 +98,10 @@ class CanvasView: UIScrollView {
     
     var viewForZooming: UIView {
         return self.paperView
+    }
+
+    func set(_ brush: Brush) {
+        self.paperView.brush = brush
+        
     }
 }
