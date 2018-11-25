@@ -10,6 +10,8 @@ import UIKit
 
 protocol CanvasViewDelegate: UIScrollViewDelegate {
     func canvasView(_ view: CanvasView, scale: CGFloat)
+    func canvasView(_ view: CanvasView, isUndoable: Bool)
+    func canvasView(_ view: CanvasView, isRedoable: Bool)
 }
 
 class CanvasView: UIScrollView {
@@ -79,10 +81,13 @@ class CanvasView: UIScrollView {
     
     private func setUpCanvasView() {
         self.addSubview(self.paperView)
+        self.paperView.delegate = self
         self.contentSize = CGRect.zero.union(self.paperView.frame).size
         self.minimumZoomScale = 0.05
         self.maximumZoomScale = 3.0
         self.zoomScale = self.fitZoomScale(self.paperView)
+        
+//        self.push(drawingContext: DrawingContext(current: nil, background: nil))
     }
     
     private func setUpGesture() {
@@ -102,6 +107,31 @@ class CanvasView: UIScrollView {
 
     func set(_ brush: Brush) {
         self.paperView.brush = brush
-        
     }
+    
+    func undo() {
+        guard let undoManager = self.paperView.undoManager else {return}
+        if undoManager.canUndo {
+            undoManager.undo()
+        }
+
+        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isUndoable: undoManager.canUndo)
+        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isRedoable: undoManager.canRedo)
+    }
+    
+    func redo() {
+        guard let undoManager = self.paperView.undoManager else {return}
+        if undoManager.canRedo {
+            undoManager.redo()
+        }
+        
+        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isUndoable: undoManager.canUndo)
+        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isRedoable: undoManager.canRedo)
+    }
+
 }
+
+extension CanvasView: PaperViewDelegate {
+}
+
+

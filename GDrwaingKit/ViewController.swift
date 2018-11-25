@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     let inkBrush = Brush(type: .ink)
     let eraseBrush = Brush(type: .eraser)
     let colors: [UIColor] = [.black, .red, .green, .blue, .orange, .brown]
@@ -38,7 +37,6 @@ class ViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.register(UINib(nibName: "ColorCollectionViewCell"
             , bundle: nil), forCellWithReuseIdentifier: "ColorCollectionViewCell")
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,16 +48,15 @@ class ViewController: UIViewController {
     @IBAction func inkButton(_ sender: UIButton) {
         self.canvasView.set(self.inkBrush)
         self.collectionView.isHidden = false
-        self.widthSlider.value = Float(self.canvasView.brushWidth)
-        self.alphaSlider.value = Float(self.canvasView.brushAlpha)
-        self.canvasView.brushColor = .green
+        self.widthSlider.setValue(Float(self.canvasView.brushWidth), animated: true)
+        self.alphaSlider.setValue(Float(self.canvasView.brushAlpha), animated: true)
     }
     
     @IBAction func eraseButton(_ sender: UIButton) {
         self.canvasView.set(self.eraseBrush)
         self.collectionView.isHidden = true
-        self.widthSlider.value = Float(self.canvasView.brushWidth)
-        self.alphaSlider.value = Float(self.canvasView.brushAlpha)
+        self.widthSlider.setValue(Float(self.canvasView.brushWidth), animated: true)
+        self.alphaSlider.setValue(Float(self.canvasView.brushAlpha), animated: true)
     }
     
     @IBAction func widthSliderValueChanged(_ sender: UISlider) {
@@ -70,6 +67,13 @@ class ViewController: UIViewController {
         self.canvasView.brushAlpha = CGFloat(sender.value)
     }
     
+    @IBAction func undoButotnPressed(_ sender: UIButton) {
+        self.canvasView.undo()
+    }
+    
+    @IBAction func redoButtonPressed(_ sender: UIButton) {
+        self.canvasView.redo()
+    }
     
 }
 
@@ -108,6 +112,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 
 extension ViewController: CanvasViewDelegate {
-    func canvasView(_ view: CanvasView, scale: CGFloat) {
+    func canvasView(_ view: CanvasView, isUndoable: Bool) {
+        debugPrint(isUndoable)
     }
+    
+    func canvasView(_ view: CanvasView, isRedoable: Bool) {
+        debugPrint(isRedoable)
+    }
+    
+    func canvasView(_ view: CanvasView, scale: CGFloat) {
+        debugPrint(scale)
+    }
+    
 }

@@ -22,17 +22,31 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiO-dk-cXn">
-                                        <rect key="frame" x="0.0" y="0.0" width="182.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="30"/>
                                         <state key="normal" title="Ink"/>
                                         <connections>
                                             <action selector="inkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rZ0-Ma-3az"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-cp-Dyv">
-                                        <rect key="frame" x="192.5" y="0.0" width="182.5" height="30"/>
+                                        <rect key="frame" x="96.5" y="0.0" width="86" height="30"/>
                                         <state key="normal" title="Erase"/>
                                         <connections>
                                             <action selector="eraseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pa6-Ex-InF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0In-rW-4aD">
+                                        <rect key="frame" x="192.5" y="0.0" width="86.5" height="30"/>
+                                        <state key="normal" title="Undo"/>
+                                        <connections>
+                                            <action selector="undoButotnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdx-TY-eRs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzZ-en-wNR">
+                                        <rect key="frame" x="289" y="0.0" width="86" height="30"/>
+                                        <state key="normal" title="Redo"/>
+                                        <connections>
+                                            <action selector="redoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ffn-BG-4G2"/>
                                         </connections>
                                     </button>
                                 </subviews>

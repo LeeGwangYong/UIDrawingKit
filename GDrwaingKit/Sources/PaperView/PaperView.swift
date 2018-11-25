@@ -8,16 +8,19 @@
 
 import UIKit
 
+protocol PaperViewDelegate {
+//    func paperView(_ view: PaperView, drawingContext: DrawingContext)
+}
 class PaperView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     
-    var curvePoints: [CGPoint] = [.zero]
-    let bezielPath: UIBezierPath = UIBezierPath()
+    private var curvePoints: [CGPoint] = [.zero]
+    private let bezielPath: UIBezierPath = UIBezierPath()
     var brush: Brush?
-    var drawingContext: DrawingContext?
+    var delegate: PaperViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +56,7 @@ class PaperView: UIView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
+        debugPrint(currentPoint)
         self.bezielPath.addLine(to: currentPoint)
         self.drawPath()
     }
@@ -67,6 +71,7 @@ class PaperView: UIView {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.touchesEnded(touches, with: event)
     }
+    
     
     private func drawPath() {
         guard let brush = self.brush else {fatalError("There is no brush")}
@@ -96,9 +101,23 @@ class PaperView: UIView {
         self.mainImageView.image?.draw(in: self.bounds)
         self.tempImageView.image?.draw(in: self.bounds)
         
-        self.mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         self.tempImageView.image = nil
+        let currentImage = UIGraphicsGetImageFromCurrentImageContext()
+        let backgroundImage = self.backgroundImageView.image
+        self.push(DrawingContext(current: currentImage,
+                                 background: backgroundImage))
         
         UIGraphicsEndImageContext()
+    }
+    
+    @objc
+    func push(_ drawingcontext: DrawingContext) {
+        let previousMainImage = self.mainImageView.image
+        let previousBackgoundImage = self.backgroundImageView.image
+        self.undoManager?.registerUndo(withTarget: self, handler: { (target) in
+            self.push(DrawingContext(current: previousMainImage, background: previousBackgoundImage))
+        })
+        self.mainImageView.image = drawingcontext.current
+        self.backgroundImageView.image = drawingcontext.background
     }
 }

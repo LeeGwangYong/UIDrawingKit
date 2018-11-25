@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-struct DrawingContext {
+
+class DrawingContext: NSObject {
     var current: UIImage?
     var background: UIImage?
     
