@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 
-class DrawingContext: NSObject {
-    var current: UIImage?
-    var background: UIImage?
-    
-    init(current: UIImage? = nil, background: UIImage? = nil) {
-        self.current = current
-        self.background = background
-    }
+struct DrawingContext {
+    var path: CGMutablePath
+    var brush: Brush
 }
 
+extension DrawingContext: Equatable {
+    static func == (lhs: DrawingContext, rhs: DrawingContext) -> Bool {
+        return (lhs.path == rhs.path) && (lhs.brush == rhs.brush)
+    }
+}

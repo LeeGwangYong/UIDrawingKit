@@ -14,24 +14,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let inkBrush = Brush(type: .ink)
+    let inkBrush = Brush(type: .normal)
     let eraseBrush = Brush(type: .eraser)
     let colors: [UIColor] = [.black, .red, .green, .blue, .orange, .brown]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canvasView.delegate = self
-        self.canvasView.set(self.inkBrush)
+        self.canvasView.brush = self.inkBrush
+        
         self.canvasView.showsVerticalScrollIndicator = false
         self.canvasView.showsHorizontalScrollIndicator = false
         
+        
         self.widthSlider.minimumValue = 0.1
         self.widthSlider.maximumValue = 100.0
-        self.widthSlider.value = Float(self.canvasView.brushWidth)
+        self.widthSlider.value = Float(self.canvasView.brush.width)
         
         self.alphaSlider.minimumValue = 0.0
         self.alphaSlider.maximumValue = 1.0
-        self.alphaSlider.value = Float(self.canvasView.brushAlpha)
+        self.alphaSlider.value = Float(self.canvasView.brush.alpha)
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -46,25 +48,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func inkButton(_ sender: UIButton) {
-        self.canvasView.set(self.inkBrush)
+        self.canvasView.brush = self.inkBrush
         self.collectionView.isHidden = false
-        self.widthSlider.setValue(Float(self.canvasView.brushWidth), animated: true)
-        self.alphaSlider.setValue(Float(self.canvasView.brushAlpha), animated: true)
+        self.alphaSlider.isHidden = false
+        self.widthSlider.setValue(Float(self.canvasView.brush.width), animated: true)
+        self.alphaSlider.setValue(Float(self.canvasView.brush.alpha), animated: true)
     }
     
     @IBAction func eraseButton(_ sender: UIButton) {
-        self.canvasView.set(self.eraseBrush)
+        self.canvasView.brush = self.eraseBrush
         self.collectionView.isHidden = true
-        self.widthSlider.setValue(Float(self.canvasView.brushWidth), animated: true)
-        self.alphaSlider.setValue(Float(self.canvasView.brushAlpha), animated: true)
+        self.alphaSlider.isHidden = true
+        self.widthSlider.setValue(Float(self.canvasView.brush.width), animated: true)
+        self.alphaSlider.setValue(Float(self.canvasView.brush.alpha), animated: true)
     }
     
     @IBAction func widthSliderValueChanged(_ sender: UISlider) {
-        self.canvasView.brushWidth = CGFloat(sender.value)
+        self.canvasView.brush.width = CGFloat(sender.value)
     }
     
     @IBAction func alphaSliderValueChanged(_ sender: UISlider) {
-        self.canvasView.brushAlpha = CGFloat(sender.value)
+        self.canvasView.brush.alpha = CGFloat(sender.value)
     }
     
     @IBAction func undoButotnPressed(_ sender: UIButton) {
@@ -112,16 +116,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 
 extension ViewController: CanvasViewDelegate {
+    func canvasView(_ view: CanvasView, scale: CGFloat) {
+        
+    }
+    
     func canvasView(_ view: CanvasView, isUndoable: Bool) {
-        debugPrint(isUndoable)
+        
     }
     
     func canvasView(_ view: CanvasView, isRedoable: Bool) {
-        debugPrint(isRedoable)
+        
     }
     
-    func canvasView(_ view: CanvasView, scale: CGFloat) {
-        debugPrint(scale)
-    }
     
 }

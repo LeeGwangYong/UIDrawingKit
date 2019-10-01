@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC15998B21AB181A007FC7C5 /* DrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC15998A21AB181A007FC7C5 /* DrawingLayer.swift */; };
 		FC16A95721907C510039CCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC16A95621907C510039CCB3 /* AppDelegate.swift */; };
 		FC16A95921907C510039CCB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC16A95821907C510039CCB3 /* ViewController.swift */; };
 		FC16A95C21907C510039CCB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC16A95A21907C510039CCB3 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC15998A21AB181A007FC7C5 /* DrawingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingLayer.swift; sourceTree = "<group>"; };
 		FC16A95321907C510039CCB3 /* GDrawingKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDrawingKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC16A95621907C510039CCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC16A95821907C510039CCB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				FC16A96821907D610039CCB3 /* PaperView.swift */,
 				FC16A97821928EC70039CCB3 /* PaperView.xib */,
+				FC15998A21AB181A007FC7C5 /* DrawingLayer.swift */,
 			);
 			path = PaperView;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				FC16A96C21913EBB0039CCB3 /* UIImage + Convert.swift in Sources */,
 				FC16A97B219290130039CCB3 /* NSObject+ReuseIdentifier.swift in Sources */,
 				FC992B75219878B000DB8272 /* DrawingConfiguration.swift in Sources */,
+				FC15998B21AB181A007FC7C5 /* DrawingLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EPWV8KDDJE;
 				INFOPLIST_FILE = GDrwaingKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EPWV8KDDJE;
 				INFOPLIST_FILE = GDrwaingKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

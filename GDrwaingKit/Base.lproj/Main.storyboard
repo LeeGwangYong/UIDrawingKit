@@ -123,30 +123,34 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="Rrk-bz-c3l"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5E-9e-wxY" customClass="CanvasView" customModule="GDrawingKit" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmc-4i-ZbG" customClass="CanvasView" customModule="GDrawingKit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="244" width="375" height="423"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="tmc-4i-ZbG" firstAttribute="top" secondItem="kbs-9i-gGx" secondAttribute="bottom" id="1eX-zY-HQp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kbs-9i-gGx" secondAttribute="trailing" id="2L2-7Z-uG3"/>
                             <constraint firstItem="kbs-9i-gGx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="45y-bM-dn5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MLm-xe-VlZ" secondAttribute="trailing" id="7pt-Wu-4fL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j5E-9e-wxY" secondAttribute="trailing" id="9wK-YG-afN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tmc-4i-ZbG" secondAttribute="trailing" id="7uY-Pk-mGN"/>
                             <constraint firstItem="kbs-9i-gGx" firstAttribute="top" secondItem="MLm-xe-VlZ" secondAttribute="bottom" id="C3s-IK-YwN"/>
                             <constraint firstItem="MLm-xe-VlZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cc0-hc-X22"/>
-                            <constraint firstItem="j5E-9e-wxY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CxH-ie-JVK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j5E-9e-wxY" secondAttribute="bottom" id="V2l-5r-ahF"/>
+                            <constraint firstItem="tmc-4i-ZbG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DuJ-xR-fHd"/>
+                            <constraint firstItem="tmc-4i-ZbG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="The-Mh-GOB"/>
                             <constraint firstItem="MLm-xe-VlZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZJP-K2-adb"/>
-                            <constraint firstItem="j5E-9e-wxY" firstAttribute="top" secondItem="kbs-9i-gGx" secondAttribute="bottom" id="cNs-C1-JjZ"/>
+                            <constraint firstItem="tmc-4i-ZbG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="akJ-H0-kvF"/>
+                            <constraint firstItem="tmc-4i-ZbG" firstAttribute="top" secondItem="kbs-9i-gGx" secondAttribute="bottom" id="ct4-AU-wwc"/>
+                            <constraint firstItem="tmc-4i-ZbG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vwT-bP-NCb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tmc-4i-ZbG" secondAttribute="bottom" id="wLa-XD-q5P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="alphaSlider" destination="XAA-XB-lQy" id="bQs-i8-aWG"/>
-                        <outlet property="canvasView" destination="j5E-9e-wxY" id="ZNe-MR-vwH"/>
+                        <outlet property="canvasView" destination="tmc-4i-ZbG" id="zRF-Rd-VGH"/>
                         <outlet property="collectionView" destination="cDe-nG-Rp5" id="dPh-SB-zOa"/>
                         <outlet property="widthSlider" destination="4As-LT-G0V" id="Tfd-IW-IO7"/>
                     </connections>

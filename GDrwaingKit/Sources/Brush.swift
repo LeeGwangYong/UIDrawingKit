@@ -9,13 +9,21 @@
 import Foundation
 import UIKit
 
-class Brush {
+class Brush: NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Brush(type: self.type)
+        copy.width = self.width
+        copy.alpha = self.alpha
+        copy.color = self.color
+        return copy
+    }
+    
     enum BrushType {
-        case ink, eraser
+        case normal, eraser
         
         var blendMode: CGBlendMode {
             switch self {
-            case .ink:
+            case .normal:
                 return .normal
             case .eraser:
                 return .clear
@@ -23,15 +31,21 @@ class Brush {
         }
     }
     
-    var width: CGFloat = 5.0
+    var width: CGFloat = 10.0
     var alpha: CGFloat = 1.0
     var color: UIColor = .black
-    let type: BrushType
+    var type: BrushType
     
     init(type: BrushType) {
         self.type = type
         if self.type == .eraser {
             self.color = .clear
         }
+    }
+}
+
+extension Brush: Equatable {
+    static func == (lhs: Brush, rhs: Brush) -> Bool {
+        return (lhs.width == rhs.width) && (lhs.alpha == rhs.alpha) && (lhs.color == rhs.color) && (lhs.type == rhs.type)
     }
 }

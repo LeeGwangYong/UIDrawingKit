@@ -18,35 +18,22 @@ class CanvasView: UIScrollView {
     private let paperView: PaperView = PaperView(frame: CGRect(x: 0, y: 0, width: 1080, height: 720))
     private var delegateProxy = CanvasViewDelegateProxy()
     
-    var brushColor: UIColor {
+    var brush: Brush {
         get {
-            return self.paperView.brush?.color ?? .clear
+            return self.paperView.brush
         }
         set {
-            self.paperView.brush?.color = newValue
+            self.paperView.brush = newValue
         }
     }
     
-    var brushWidth: CGFloat {
+    var isDrawingEnable: Bool {
         get {
-            return self.paperView.brush?.width ?? 0.0
+            return self.paperView.isDrawingEnable
         }
         set {
-            self.paperView.brush?.width = newValue
+            self.paperView.isDrawingEnable = newValue
         }
-    }
-    
-    var brushAlpha: CGFloat {
-        get {
-            return self.paperView.brush?.alpha ?? 0.0
-        }
-        set {
-            self.paperView.brush?.alpha = newValue
-        }
-    }
-    
-    var currentBrush: Brush? {
-        return self.paperView.brush
     }
     
     override var delegate: UIScrollViewDelegate? {
@@ -86,8 +73,6 @@ class CanvasView: UIScrollView {
         self.minimumZoomScale = 0.05
         self.maximumZoomScale = 3.0
         self.zoomScale = self.fitZoomScale(self.paperView)
-        
-//        self.push(drawingContext: DrawingContext(current: nil, background: nil))
     }
     
     private func setUpGesture() {
@@ -105,28 +90,14 @@ class CanvasView: UIScrollView {
         return self.paperView
     }
 
-    func set(_ brush: Brush) {
-        self.paperView.brush = brush
-    }
     
     func undo() {
-        guard let undoManager = self.paperView.undoManager else {return}
-        if undoManager.canUndo {
-            undoManager.undo()
-        }
-
-        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isUndoable: undoManager.canUndo)
-        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isRedoable: undoManager.canRedo)
+        self.paperView.undo()
     }
     
     func redo() {
-        guard let undoManager = self.paperView.undoManager else {return}
-        if undoManager.canRedo {
-            undoManager.redo()
-        }
+        self.paperView.redo()
         
-        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isUndoable: undoManager.canUndo)
-        (self.delegate as? CanvasViewDelegate)?.canvasView(self, isRedoable: undoManager.canRedo)
     }
 
 }
